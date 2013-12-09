@@ -9,12 +9,13 @@
     <p>If you didn't get an alert box you are likely not in the compatibility mode. Congratulations for that. But still, I feel sorry for you using IE.</p>
     <script src="ie.detect-compatibilitymode.js"></script>
     <script>
-        if (detectIE().compatibilityMode) {
-          console && console.log && console.log('Compatibility Mode is active!');
-          alert("Attention: Compatibility Mode is active! Please remove Internet Explorer and install a real browser.");
-        } else {
-          console && console.log && console.log('Compatibility Mode is inactive...');
-        }
+      console.dir(detectIE());
+      if (detectIE().compatibilityMode) {
+        console && console.log && console.log('Compatibility Mode is active!');
+        alert("Attention: Compatibility Mode is active! Please remove Internet Explorer and install a real browser.");
+      } else {
+        console && console.log && console.log('Compatibility Mode is inactive...');
+      }
     </script>
   </body>
 </html>

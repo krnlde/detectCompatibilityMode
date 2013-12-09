@@ -6,7 +6,9 @@ function detectIE() {
 
   if (agentStr.indexOf("MSIE 7.0") > -1) {
     IsOn = true;
-    if (agentStr.indexOf("Trident/6.0") > -1) {
+    if (agentStr.indexOf("Trident/7.0") > -1) {
+      Version = 'IE11';
+    } else if (agentStr.indexOf("Trident/6.0") > -1) {
       Version = 'IE10';
     } else if (agentStr.indexOf("Trident/5.0") > -1) {
       Version = 'IE9';
@@ -25,6 +27,11 @@ function detectIE() {
   }
   else if (agentStr.indexOf("MSIE 10.0") > -1) {
     Version = 'IE10';
+  }
+  else if (agentStr.indexOf("like Gecko") > -1 && agentStr.indexOf("rv:11") > -1) {
+    IsIE = true;
+    IsOn = false;
+    Version = 'IE11';
   }
 
   return {
